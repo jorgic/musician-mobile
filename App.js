@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { WebView } from "react-native-webview";
+import React from "react";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <React.Fragment>
+      <WebView
+        source={{
+          uri: "https://musician-frontend-ud95.vercel.app/",
+        }}
+        style={{ flex: 1 }}
+      />
+      <StatusBar backgroundColor={"transparent"} translucent hidden />
+    </React.Fragment>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
